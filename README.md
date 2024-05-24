@@ -1,4 +1,4 @@
-# Next.js WordPress RST API JWT Authentication
+# Next.js WordPress REST API JWT Authentication
 
 This project demonstrates how to implement JWT (JSON Web Tokens) authentication in a Next.js application using WordPress as the backend. It includes features like dark/light mode, login using credentials and Google, and API-based profile updates.
 
