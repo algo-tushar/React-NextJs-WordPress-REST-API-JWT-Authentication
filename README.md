@@ -19,7 +19,7 @@ This project demonstrates how to implement JWT (JSON Web Tokens) authentication 
 - WordPress installation with the [JWT Authentication for WP-API](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) plugin activated
 - Add the secret key in wp-config.php file
 ```php
-// Define JWT secret key (use the same JWT_SECRET as defined in .env.local)
+// Define JWT secret key (use the same JWT_SECRET as in .env.local)
 define('JWT_AUTH_SECRET_KEY', 'your-jwt-secret');
 define('JWT_AUTH_CORS_ENABLE', true);
 ```
@@ -35,7 +35,7 @@ define('JWT_AUTH_CORS_ENABLE', true);
 
 1. Clone the repository: `git clone https://github.com/your-username/nextjs-wp-jwt-auth.git`
 2. Install dependencies: `npm install`
-3. Create a `.env.local` file in the root directory and add the following:
+3. Create a `.env.local` file in the root directory and add the following: (use the same JWT_SECRET as defined in wp-config.php)
 
    ```plaintext
    NEXT_PUBLIC_GOOGLE_CLIENT_ID=your-google-client-id

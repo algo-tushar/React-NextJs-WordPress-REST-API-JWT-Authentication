@@ -1,8 +1,11 @@
+import axios from 'axios';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { FaCheck, FaTimes, FaTimesCircle } from 'react-icons/fa';
 import { wpApi } from '../utils/wpApi';
 
 const UpdateProfile = ({ token, userId }) => {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
@@ -96,6 +99,16 @@ const UpdateProfile = ({ token, userId }) => {
         }
     };
 
+    const handleLogout = async () => {
+        try {
+            const result = await axios.post('/api/auth/logout');
+            router.push('/login'); // Redirect to the login page after logging out
+        } catch (error) {
+            setErrorMessage(error.message);
+            setTimeout(() => setErrorMessage(''), 3000);
+        }
+    };
+
     return (
         <div>
             {successMessage && (
@@ -125,7 +138,8 @@ const UpdateProfile = ({ token, userId }) => {
                 </div>
             )}
 
-            <h2 className="text-2xl font-bold mb-6">Edit Profile</h2>
+            <h2 className="text-2xl font-bold mb-6">Edit Profile <button onClick={handleLogout} className="text-base text-red-500 font-normal">(Logout?)</button></h2>
+            
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <label className="block dark:text-gray-300">
