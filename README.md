@@ -27,7 +27,7 @@ define('JWT_AUTH_CORS_ENABLE', true);
 ### Setting up Google OAuth
 
 1. Go to the [Google Developers Console](https://console.developers.google.com/).
-2. Create a new project and enable the Google+ API for that project.
+2. Create a new project for that project.
 3. In the Credentials section, create a new OAuth 2.0 client ID.
 4. Add `http://localhost:3000` as an authorized redirect URI for your client ID.
 
